@@ -24,7 +24,7 @@
     font-family: 'Montserrat';
 }
 
-.rank_neutral {
+/* .rank_neutral {
     text-align: left;
     font-family: 'Montserrat';
 }
@@ -32,7 +32,7 @@
 .rank_bad {
     text-align: left;
     font-family: 'Montserrat';
-}
+} */
 
 .total::before {
     content: '';

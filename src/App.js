@@ -15,7 +15,6 @@ class App extends Component {
       good: 0,
       neutral: 0,
       bad: 0,
-      positivePercent: 0
   }
 
   onGoodRank = () => {
@@ -37,23 +36,23 @@ class App extends Component {
   };
 
 
-  countTotalFeedback = () => {
-    const {good, neutral, bad} = this.state;
-    const total = good + neutral + bad;
-    return total;
-  }
+  // countTotalFeedback = () => {
+  //   const {good, neutral, bad} = this.state;
+  //   const total = good + neutral + bad;
+  //   return total;
+  // }
 
-  countPositiveFeedbackPercentage = () => {
-    const total = this.countTotalFeedback();
-    const {good} = this.state;
-    const positivePercent = (good * 100) / total;
-    return Math.floor(positivePercent);
-  }
+  // countPositiveFeedbackPercentage = () => {
+  //   const total = this.countTotalFeedback();
+  //   const {good} = this.state;
+  //   const positivePercent = (good * 100) / total;
+  //   return Math.floor(positivePercent);
+  // }
 
   render () {
-    const {good, neutral, bad} = this.state;
-    const countTotal = this.countTotalFeedback();
-    const positivePercent = this.countPositiveFeedbackPercentage();
+    // const {good, neutral, bad} = this.state;
+    // const countTotal = this.countTotalFeedback();
+    // const positivePercent = this.countPositiveFeedbackPercentage();
 
     return (
       <div className="App">
@@ -63,12 +62,8 @@ class App extends Component {
           addBadRank={this.onBadRank}/>
 
         <Statistics 
-          good={good} 
-          neutral={neutral} 
-          bad={bad}
-          total={countTotal}
-          percentage={positivePercent}
-          />
+        stats={this.state}
+        />
   
       </div>
     );
