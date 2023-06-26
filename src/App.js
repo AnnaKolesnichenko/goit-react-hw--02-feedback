@@ -17,49 +17,21 @@ class App extends Component {
       bad: 0,
   }
 
-  onGoodRank = () => {
+  onLeaveFeedback = (option) => {
     this.setState((prevState) => ({
-      good: prevState.good + 1,
-    }))
-  };
-
-  onNeutralRank = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }))
-  };
-
-  onBadRank = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
+      [option]: prevState[option] + 1,
     }))
   };
 
 
-  // countTotalFeedback = () => {
-  //   const {good, neutral, bad} = this.state;
-  //   const total = good + neutral + bad;
-  //   return total;
-  // }
-
-  // countPositiveFeedbackPercentage = () => {
-  //   const total = this.countTotalFeedback();
-  //   const {good} = this.state;
-  //   const positivePercent = (good * 100) / total;
-  //   return Math.floor(positivePercent);
-  // }
 
   render () {
-    // const {good, neutral, bad} = this.state;
-    // const countTotal = this.countTotalFeedback();
-    // const positivePercent = this.countPositiveFeedbackPercentage();
 
     return (
       <div className="App">
         <Feedback 
-          addGoodRank={this.onGoodRank}
-          addNeutralRank={this.onNeutralRank}
-          addBadRank={this.onBadRank}/>
+          options={Object.keys(this.state)}
+          onLeaveFeedback={this.onLeaveFeedback}/>
 
         <Statistics 
         stats={this.state}

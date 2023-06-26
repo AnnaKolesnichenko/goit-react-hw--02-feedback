@@ -37,9 +37,10 @@
     width: 100px;
     border-radius: 5px;
     font-family: 'Montserrat';
+    text-transform: capitalize;
 }
 
-.neutral button{
+/* .neutral button{
     background-color: rgb(220, 222, 228);
     border: rgb(81, 81, 13);
     padding: 10px;
@@ -54,7 +55,7 @@
     padding: 10px;
     width: 100px;
     border-radius: 5px;font-family: 'Montserrat';
-}
+} */
 
 button:hover, 
 button:active {
